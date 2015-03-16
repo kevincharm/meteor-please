@@ -1,0 +1,27 @@
+{
+  "name": "mplz",
+  "version": "0.1.0",
+  "description": "Simple Meteor Deployment for CentOS 7+",
+  "dependencies": {
+    "colors": "0.3.x",
+    "underscore": "1.7.0",
+    "cjson": "0.3.x"
+  },
+  "bin": {
+    "mplz": "./bin/mplz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hellstad/meteor-please.git"
+  },
+  "keywords": [
+    "mplz",
+    "meteor",
+    "deploy",
+    "centos",
+    "rhel",
+    "fedora"
+  ],
+  "author": "Kevin van Guldenaar <kevin@kevincharm.com>",
+  "license": "MIT"
+}

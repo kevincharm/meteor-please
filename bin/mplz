@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var Config = require('../lib/config');
+var Please = require('../lib/please');
+
+console.log('\n\nmeteor-please: Simple Meteor Deployment for CentOS 7+\n'.bold.green);
+
+var cmd = process.argv[2];
+var current_dir = path.resolve('.');
+var config = Config.read();
+var plz = new Please(config, current_dir);
+if (plz[cmd]) {
+	plz[cmd]();
+} else {
+	console.error('Invalid argument.'.bold.red);
+}

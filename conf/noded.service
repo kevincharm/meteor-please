@@ -1,0 +1,18 @@
+[Unit]
+Description=<%= appName %> nodejs daemon
+After=network.target remote-fs.target
+
+[Service]
+User=<%= appUser %>
+ExecStart=/usr/local/bin/node /home/<%= appUser %>/bundle/main.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=<%= appName %>
+Environment=ROOT_URL=http://127.0.0.1
+Environment=PORT=3000
+Environment=NODE_ENV=production
+Environment=MONGO_URL=<%= appMongoUrl %>
+
+[Install]
+WantedBy=multi-user.target

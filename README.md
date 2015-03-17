@@ -1,12 +1,12 @@
 # meteor-please
 [![npm version](https://badge.fury.io/js/mplz.svg)](http://badge.fury.io/js/mplz)
-###Simple Meteor Deployment for RHEL/CentOS 7+
+### Simple Meteor Deployment for RHEL/CentOS 7+
 Deploy your Meteor/nodejs project on RHEL flavoured boxes via SSH, and keep your apps alive with __systemd__. Your app is served through reverse proxy by __nginx__. Uses some codebase from [arunoda](https://github.com/arunoda)'s [meteor-up](https://github.com/arunoda/meteor-up) and [nodemiral-forcetty](https://github.com/hellstad/nodemiral-forcetty). Currently has very basic functionality; more features coming soon!
 
-##Installation
+## Installation
 `npm install -g mplz`
 
-##Usage
+## Usage
 You need to create a `mplz.json` configuration file in your local Meteor project directory with this structure. (I'll add a prompt in the future)
 ````js
 {
@@ -65,7 +65,7 @@ mplz deploy
 
 Easy!
 
-##Commands
+## Commands
 ````
 mplz setup
 mplz deploy

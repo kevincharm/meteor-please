@@ -3,8 +3,9 @@
 var path = require('path');
 var Config = require('../lib/config');
 var Please = require('../lib/please');
+var Help = require('../lib/helpers');
 
-console.log('\n\nmeteor-please: Simple Meteor Deployment for CentOS 7+\n'.bold.green);
+console.log('\n\n\tmeteor-please\n\tSimple Meteor Deployment for RHEL/CentOS 7+\n\n'.bold.green);
 
 var cmd = process.argv[2];
 var current_dir = path.resolve('.');
@@ -14,4 +15,5 @@ if (plz[cmd]) {
 	plz[cmd]();
 } else {
 	console.error('Invalid argument.'.bold.red);
+	Help.printHelp();
 }

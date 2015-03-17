@@ -1,6 +1,6 @@
 {
   "name": "mplz",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple Meteor Deployment for RHEL/CentOS 7+",
   "dependencies": {
     "nodemiral-forcetty": "0.4.x",

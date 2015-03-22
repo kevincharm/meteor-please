@@ -11,7 +11,7 @@ console.log('\n\n\tmeteor-please\n\tSimple Meteor Deployment for RHEL/CentOS 7+\
 var cmd = process.argv[2];
 var current_dir = path.resolve('.');
 
-if ((!fs.existsSync(path.resolve(current_dir, 'mplz.json'))) || (cmd == 'init')) {
+if (!fs.existsSync(path.resolve(current_dir, 'mplz.json'))) {
 	Help.initJson(current_dir);
 } else {
 	var config = Config.read();

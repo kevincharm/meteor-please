@@ -7,50 +7,14 @@ Deploy your Meteor/nodejs project on RHEL flavoured boxes via SSH, and keep your
 `npm install -g mplz`
 
 ## Usage
-You need to create a `mplz.json` configuration file in your local Meteor project directory with this structure. (I'll add a prompt in the future)
-````js
-{
-  // Uses similar structure to arunoda's mup settings.
-  // Server authentication info
-  "servers": [
-    {
-      "host": "hostname",
-      "username": "root",
-      //"password": "password"
-      // or pem file (ssh based authentication)
-      "pem": "~/.ssh/id_rsa"
-    }
-  ],
-
-  // Install mongodb
-  "setupMongo": true,
-
-  // Install nodejs
-  "setupNode": true,
-
-  // nodejs version to use
-  "nodeVersion": "0.10.36",
-
-  // Install nginx
-  "setupNginx": true,
-
-  // Application name (No spaces)
-  "appName": "meteor",
-
-  // Application site URL (required for nginx)
-  "appSiteUrl": "http://mydomain.com",
-
-  // Local app path
-  "app": ".",
-
-  // Configure environment
-  "env": {
-    "ROOT_URL": "http://127.0.0.1"
-  },
-
-  "deployCheckWaitTime": 15
-}
+##### 1. Initialise
+Simply run in your Meteor project's directory:
 ````
+mplz
+````
+You'll get a prompt to automatically configure a `mplz.json` for your project.
+
+##### 2. Setup Your Environment
 Once you've got a configuration file, you can spin up your server, then use this command inside your project directory to install the production environment (nodejs, mongodb, nginx):
 ````
 mplz setup
@@ -58,6 +22,7 @@ mplz setup
 
 Now go grab a coffee, because it will probably take some time for all the things to install.
 
+##### 3. Deploy Your App
 After the server setup is done, you can run this command to deploy your app:
 ````
 mplz deploy
@@ -66,11 +31,17 @@ mplz deploy
 Easy!
 
 ## Commands
-````
-mplz setup
-mplz deploy
-mplz reconfig
-mplz start
-mplz stop
-mplz restart
-````
+__mplz init__ Reconfigures your app's `mplz.json` settings file.
+
+__mplz setup__ Sets up your server according to your `mplz.json` settings.
+
+__mplz deploy__ Deploys your app according to your `mplz.json` settings.
+
+__mplz reconfig__ Apply any configuration changes if your `mplz.json` has been modified since last setup.
+
+__mplz start__ Starts your app. (systemd)
+
+__mplz stop__ Stops your app. (systemd)
+
+__mplz restart__ Restarts your app. (systemd)
+

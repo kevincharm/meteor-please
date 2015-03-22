@@ -1,38 +1,26 @@
 {
-  // Uses similar structure to arunoda's mup settings.
-  // Server authentication info
   "servers": [
     {
       "host": "hostname",
       "username": "root",
-      //"password": "password"
-      // or pem file (ssh based authentication)
       "pem": "~/.ssh/id_rsa"
     }
   ],
 
-  // Install mongodb
   "setupMongo": true,
 
-  // Install nodejs
   "setupNode": true,
 
-  // nodejs version to use
   "nodeVersion": "0.10.36",
 
-  // Install nginx
   "setupNginx": true,
 
-  // Application name (No spaces)
   "appName": "meteor",
 
-  // Application site URL (required for nginx)
   "appSiteUrl": "http://mydomain.com",
 
-  // Local app path
   "app": ".",
 
-  // Configure environment
   "env": {
     "ROOT_URL": "http://127.0.0.1"
   },

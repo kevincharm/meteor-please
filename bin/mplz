@@ -4,16 +4,22 @@ var path = require('path');
 var Config = require('../lib/config');
 var Please = require('../lib/please');
 var Help = require('../lib/helpers');
+var fs = require('fs');
 
 console.log('\n\n\tmeteor-please\n\tSimple Meteor Deployment for RHEL/CentOS 7+\n\n'.bold.green);
 
 var cmd = process.argv[2];
 var current_dir = path.resolve('.');
-var config = Config.read();
-var plz = new Please(config, current_dir);
-if (plz[cmd]) {
-	plz[cmd]();
+
+if ((!fs.existsSync(path.resolve(current_dir, 'mplz.json'))) || (cmd == 'init')) {
+	Help.initJson(current_dir);
 } else {
-	console.error('Invalid argument.'.bold.red);
-	Help.printHelp();
+	var config = Config.read();
+	var plz = new Please(current_dir, config);
+	if (plz[cmd]) {
+		plz[cmd]();
+	} else {
+		console.error('Invalid argument.'.bold.red);
+		Help.printHelp();
+	}
 }

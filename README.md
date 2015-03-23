@@ -51,4 +51,3 @@ __mplz restart__ Restarts your app. (systemd)
 - SSL
 - Multiple instances/load balancing/oplog tailing
 - Prompt cleanup/validation
-- Spinnerz

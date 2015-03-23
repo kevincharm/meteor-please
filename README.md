@@ -4,7 +4,9 @@
 Deploy your Meteor/nodejs project on RHEL flavoured boxes via SSH, and keep your apps alive with __systemd__. Your app is served through reverse proxy by __nginx__. Uses some codebase from [arunoda](https://github.com/arunoda)'s [meteor-up](https://github.com/arunoda/meteor-up) and [nodemiral-forcetty](https://github.com/hellstad/nodemiral-forcetty). Currently has very basic functionality; more features coming soon!
 
 ## Installation
-`npm install -g mplz`
+````
+npm install -g mplz
+````
 
 ## Usage
 ##### 1. Initialise
@@ -45,3 +47,8 @@ __mplz stop__ Stops your app. (systemd)
 
 __mplz restart__ Restarts your app. (systemd)
 
+## TODOs
+- SSL
+- Multiple instances/load balancing/oplog tailing
+- Prompt cleanup/validation
+- Spinnerz

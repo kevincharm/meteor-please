@@ -4,7 +4,7 @@ After=network.target remote-fs.target
 
 [Service]
 User=<%= appUser %>
-ExecStart=/usr/local/bin/node /home/<%= appUser %>/bundle/main.js
+ExecStart=/usr/local/bin/node /var/www/<%= appName %>/bundle/main.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog

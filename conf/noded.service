@@ -9,8 +9,8 @@ Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=<%= appName %>
-Environment=ROOT_URL=http://127.0.0.1
-Environment=PORT=3000
+Environment=ROOT_URL=<%= appRootUrl %>
+Environment=PORT=<%= appPort %>
 Environment=NODE_ENV=production
 Environment=MONGO_URL=<%= appMongoUrl %>
 Environment=METEOR_SETTINGS=<%- appEnv %>

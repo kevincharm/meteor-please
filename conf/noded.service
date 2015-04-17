@@ -13,6 +13,7 @@ Environment=ROOT_URL=http://127.0.0.1
 Environment=PORT=3000
 Environment=NODE_ENV=production
 Environment=MONGO_URL=<%= appMongoUrl %>
+Environment=METEOR_SETTINGS=<%- appEnv %>
 
 [Install]
 WantedBy=multi-user.target

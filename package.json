@@ -1,9 +1,9 @@
 {
   "name": "mplz",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Simple Meteor Deployment for RHEL/CentOS 7+",
   "dependencies": {
-    "nodemiral-forcetty": "0.4.2",
+    "nodemiral-forcetty": "0.4.x",
     "colors": "0.3.x",
     "underscore": "1.7.0",
     "cjson": "0.3.x",
